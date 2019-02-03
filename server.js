@@ -1,30 +1,27 @@
+//Set up express
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-
+const methodOverride = require('method-override');
 const path = require('path');
 
-const port =  process.env.PORT || 5000;
+//Route imports
+const { apiRouter } = require('./routers/index.js');
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 //Static file declaration
 app.use(express.static(path.join(__dirname, 'client/build')));
 
+/*
+Set up database
+*/
+
 
 //routes
-app.get('/api/customers', (req, res) => {
-  const customers  = [
-    {id: 1, firstName: 'John', lastName: 'Doe'},
-    {id: 2, firstName: 'Steve', lastName: 'Smith'},
-    {id: 3, firstName: 'Mary', lastName: 'Swanson'}
-  ];
-  
-  res.json(customers);
-
-})
-
+app.use('/api', apiRouter);
 
 //production mode
 if(process.env.NODE_ENV === 'production') {
@@ -42,5 +39,5 @@ if(process.env.NODE_ENV === 'production') {
 // })
 
 
-
+const port =  process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on port ${port}`));
