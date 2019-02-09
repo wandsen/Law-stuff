@@ -1,6 +1,11 @@
+// npm packages
 const express = require('express');
 
+// globals
 const router = express.Router();
+
+// Models
+const { Api } = require ('../models/index');
 
 router
   .route('/customers')
@@ -14,7 +19,24 @@ router
     res.json(customers);
 
     }));
-router.comment = ()=>{
-  console.log('some comment')
-}
+
+router
+.route('/test')
+  .get((req, res) => {
+    Api.find( {}, (err, client) =>{
+      res.json(client)
+    })
+  })
+  .post((req, res) => {
+    let client = new Api ({name: 'John'})
+    client.save((err) => {
+      if(err){
+        console.log(err);
+        return;
+      }
+      res.status(201).send(client)
+    })
+    
+  })
+
 module.exports = router;

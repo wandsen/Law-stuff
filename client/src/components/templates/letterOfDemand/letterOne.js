@@ -14,38 +14,38 @@ class LetterOne extends Component {
       <strong><u>IF YOU ARE ACTING FOR INSURERS + NO PERSONAL INJURY</u></strong>
   </p>
   <p>
-      Dear Mr <span class="last-name">Surname</span>
+      Dear Mr <span className="last-name">Surname</span>
   </p>
   <p>
       <strong></strong>
   </p>
   <p>
       <strong>
-          RECOVERY AGAINST <span class="last-name">[ NAME OF TORTFEASOR ]</span> FOR ACCIDENT INVOLVING <span class="vehicle-numberone">[ VEH
-          NO. ]</span> and <span class="vehicle-numbertwo">[ VEH NO. ]</span> ALONG <span class="road-name">[ WHICH ROAD ]</span> ON <span class="date">[ DATE OF ACCIDENT ]</span>.
+          RECOVERY AGAINST <span className="last-name">[ NAME OF TORTFEASOR ]</span> FOR ACCIDENT INVOLVING <span className="vehicle-numberone">[ VEH
+          NO. ]</span> and <span className="vehicle-numbertwo">[ VEH NO. ]</span> ALONG <span className="road-name">[ WHICH ROAD ]</span> ON <span className="date">[ DATE OF ACCIDENT ]</span>.
       </strong>
   </p>
   <p>
       <strong></strong>
   </p>
   <p>
-      We act for <span class="insurance-company">[ NAME OF INSURANCE COMPANY ]</span>, the motor insurer [ VEH NO. ]
+      We act for <span className="insurance-company">[ NAME OF INSURANCE COMPANY ]</span>, the motor insurer [ VEH NO. ]
       ("our client").
   </p>
   <p>
-      We are instructed that on <span class="date">[ DATE OF ACCIDENT ]</span> at about [ TIME OF ACCIDENT
-      ] hours, there was an accident involving <span class="vehicle-numberone">[ VEH NO. ]</span> and
-      <span class="vehicle-numbertwo">[ VEH NO. ]</span>, at <span class="road-name">[ WHICH ROAD ]</span>.
+      We are instructed that on <span className="date">[ DATE OF ACCIDENT ]</span> at about [ TIME OF ACCIDENT
+      ] hours, there was an accident involving <span className="vehicle-numberone">[ VEH NO. ]</span> and
+      <span className="vehicle-numbertwo">[ VEH NO. ]</span>, at <span className="road-name">[ WHICH ROAD ]</span>.
   </p>
   <p>
       We are instructed by our client that the said accident was caused by you,
       in the driving, management and/or control of your vehicle. As a result of
-      the accident, the owner of <span class="vehicle-numberone">[ VEH NO. ]</span> suffered loss, damage and expense
+      the accident, the owner of <span className="vehicle-numberone">[ VEH NO. ]</span> suffered loss, damage and expense
       and he made a claim under his insurance policy for repair works to be
-      carried out. As the motor insurer of <span class="vehicle-numberone">[ VEH NO. ]</span>, our client was called
+      carried out. As the motor insurer of <span className="vehicle-numberone">[ VEH NO. ]</span>, our client was called
       upon to indemnify and pay the following under the policy: -
   </p>
-  <table border="1" cellspacing="0" cellpadding="0">
+  <table border="1" cellSpacing="0" cellPadding="0">
       <tbody>
           <tr>
               <td width="315" valign="top">
@@ -115,7 +115,7 @@ class LetterOne extends Component {
       Further, we are instructed to demand legal fees incurred by our client at
       this stage of the proceedings.
   </p>
-  <table border="1" cellspacing="0" cellpadding="0">
+  <table border="1" cellSpacing="0" cellPadding="0">
       <tbody>
           <tr>
               <td width="315" valign="top">

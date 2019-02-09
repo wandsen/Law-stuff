@@ -2,29 +2,44 @@ import React, { Component } from 'react';
 import './customers.css';
 
 class Customers extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);   
     this.state={
-      customers:[]
+      fullName:'null'
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.inputFullNameRef = React.createRef();
   }
-    componentDidMount() {
-      fetch('/api/customers')
-        .then(res => res.json())
-        .then(customers => this.setState({customers: customers}, () => console.log('Customers fetched', customers)));
-    }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state)
     
+  }
+    
+  handleInputChange(event){
+    this.setState({
+      [event.target.name]:event.target.value
+    })
+  }
+
+  componentDidMount(){
+    this.inputFullNameRef.current.focus()
+  }
+
   render() {
-
-
+    const {fullName} = this.state
     return (
       <div>
-        <h1>Customers here!</h1>
-        <ul>
-          {this.state.customers.map(customer => 
-            <li key={customer.id}>{ customer.firstName } {customer.lastName}</li>)}
-        </ul>
+        <h1>Forms and Inputs</h1>
+        <p>Full name is {fullName}</p>
+        <form onSubmit = {this.handleSubmit}>
+          <input ref={this.inputFullNameRef} type ='text' placeholder='Your Name' name='fullName' onChange={this.handleInputChange}/>
+          <button>Submit</button>
+        </form>
       </div>
+
     );
   }
 }

@@ -18,7 +18,19 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 /*
 Set up database
 */
+const mongoose = require('mongoose');
 
+let dev_db_url = 'mongodb://dsen:k123456@ds223605.mlab.com:23605/law';
+
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
+
+mongoose.connect(mongoDB, {useNewUrlParser: true});
+
+mongoose.set('debug', true);
+mongoose.Promise = global.Promise;
+
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //routes
 app.use('/api', apiRouter);
